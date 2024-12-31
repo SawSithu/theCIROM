@@ -4,10 +4,13 @@ h1 {
     font-size: clamp(3rem, 3vw, 5rem);
 }
 #cmotion {
-    background: $black;
+    background: rgb(19, 1, 16);
 }
 #rmotion {
-    background: $black;
+    background: rgb(1, 13, 19);
+}
+#rmotion2 {
+    background: rgb(19, 14, 1);
 }
 // ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 768px) {

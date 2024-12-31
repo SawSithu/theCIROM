@@ -1,7 +1,3 @@
-const bars = document.getElementById("bars");
-const nitems =document.getElementById("nitems");
-const main = document.getElementById("main");
-
 // ------------------------------ Loader ------------------------------//
 const loader = document.querySelector(".loader-wrapper");
 window.addEventListener("load", () => {
@@ -12,6 +8,9 @@ window.addEventListener("load", () => {
     });
 });
 // ------------------------------ Nav bar ------------------------------    
+const bars = document.getElementById("bars");
+const nitems =document.getElementById("nitems");
+const main = document.getElementById("main");   
 bars.addEventListener("click", () => {
     bars.classList.toggle("active");
     nitems.classList.toggle("come");

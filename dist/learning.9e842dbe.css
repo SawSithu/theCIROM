@@ -65,10 +65,10 @@ html {
   color: white;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
   gap: 10px;
   font-family: "Audiowide", serif;
-  scroll-snap-type: block mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -76,8 +76,8 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth !important;
-  scroll-snap-type: block mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   gap: 10px;
   font-family: "Audiowide", serif;
 }
@@ -91,7 +91,7 @@ a {
 .loader-wrapper {
   margin: 0;
   padding: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   background: black;
   z-index: 9999;
@@ -104,7 +104,8 @@ a {
   opacity: 1;
 }
 .loader-wrapper.hidden {
-  opacity: 0;
+  opacity: 1;
+  visibility: hidden;
 }
 
 .loader {
@@ -247,13 +248,7 @@ nav .right .bars {
 nav .left {
   text-align: left;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-nav .left a {
-  text-align: left;
-  display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 nav a {
@@ -480,11 +475,15 @@ h1 {
 }
 
 #cmotion {
-  background: black;
+  background: rgb(19, 1, 16);
 }
 
 #rmotion {
-  background: black;
+  background: rgb(1, 13, 19);
+}
+
+#rmotion2 {
+  background: rgb(19, 14, 1);
 }
 
 @media (max-width: 768px) {
