@@ -1,0 +1,21 @@
+{
+  "name": "theciromwebsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build /index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.83.0",
+    "three": "^0.171.0"
+  },
+  "dependencies": {
+    "base.css": "^1.0.0"
+  }
+}
