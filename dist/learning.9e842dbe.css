@@ -91,7 +91,7 @@ a {
 .loader-wrapper {
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   background: black;
   z-index: 9999;
@@ -104,25 +104,25 @@ a {
   opacity: 1;
 }
 .loader-wrapper.hidden {
-  opacity: 1;
+  opacity: 0;
   visibility: hidden;
 }
 
 .loader {
-  margin: 0 0 2em;
-  height: 100px;
-  width: 20%;
-  text-align: center;
-  padding: 1em;
-  margin: 0 auto 1em;
-  display: inline-block;
-  vertical-align: top;
-}
-.loader svg path,
-.loader svg rect {
-  fill: #008dc9;
+  width: 50px;
+  height: 50px;
+  border: #008dc9 5px solid;
+  animation: spin 1s linear infinite;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .blur {
   filter: blur(5px);
 }
