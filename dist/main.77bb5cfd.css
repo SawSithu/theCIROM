@@ -82,6 +82,12 @@ body {
   font-family: "Audiowide", serif;
 }
 
+a {
+  font-family: "mokoto", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
 .loader-wrapper {
   margin: 0;
   padding: 0;
@@ -328,8 +334,8 @@ a {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  align-items: center;
   text-align: center;
   gap: 20px;
 }
