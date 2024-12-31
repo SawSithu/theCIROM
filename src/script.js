@@ -2,9 +2,16 @@ const bars = document.getElementById("bars");
 const nitems =document.getElementById("nitems");
 const main = document.getElementById("main");
 
-function test() {
-    console.log("clicked")
-}
+// ------------------------------ Loader ------------------------------//
+const loader = document.querySelector(".loader-wrapper");
+window.addEventListener("load", () => {
+    loader.classList.add("hidden");
+    
+    loader.addEventListener("transitionend", () => {
+        loader.remove();
+    });
+});
+// ------------------------------ Nav bar ------------------------------    
 bars.addEventListener("click", () => {
     bars.classList.toggle("active");
     nitems.classList.toggle("come");

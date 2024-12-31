@@ -41342,9 +41342,16 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var bars = document.getElementById("bars");
 var nitems = document.getElementById("nitems");
 var main = document.getElementById("main");
-function test() {
-  console.log("clicked");
-}
+
+// ------------------------------ Loader ------------------------------//
+var loader = document.querySelector(".loader-wrapper");
+window.addEventListener("load", function () {
+  loader.classList.add("hidden");
+  loader.addEventListener("transitionend", function () {
+    loader.remove();
+  });
+});
+// ------------------------------ Nav bar ------------------------------    
 bars.addEventListener("click", function () {
   bars.classList.toggle("active");
   nitems.classList.toggle("come");
