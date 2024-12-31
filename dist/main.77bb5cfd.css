@@ -62,22 +62,22 @@
 
 html {
   margin: 0;
-  padding-top: 5px;
   color: white;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   gap: 10px;
   font-family: "Audiowide", serif;
+  scroll-snap-type: block mandatory;
 }
 
 body {
   margin: 0;
-  padding-top: 5px;
   color: white;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
+  scroll-snap-type: block mandatory;
   gap: 10px;
   font-family: "Audiowide", serif;
 }
@@ -216,6 +216,7 @@ button a {
 }
 
 nav {
+  padding-top: 5px;
   z-index: 99;
   position: fixed;
   width: 100%;
@@ -245,6 +246,15 @@ nav .right .bars {
 }
 nav .left {
   text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .left a {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 nav a {
   color: white;
@@ -312,10 +322,6 @@ a {
   justify-content: center;
   gap: 20px;
 }
-.wrapper-left iframe {
-  width: 100%;
-  height: 100%;
-}
 
 .wrapper-right {
   display: flex;
@@ -347,8 +353,10 @@ a {
 }
 
 .wrapper {
+  gap: 15px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 .wrapper .wrapper-left {
@@ -358,8 +366,24 @@ a {
   height: 100%;
 }
 
+.iframe-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding-top: 56.25%;
+}
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 section {
-  height: calc(100vh - 20px);
+  scroll-snap-align: start;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,6 +391,9 @@ section {
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    gap: 20px;
+  }
   nav span {
     padding: 5px;
   }
@@ -408,6 +435,9 @@ section {
   nav .right .active span:nth-child(3) {
     transform: rotate(55deg);
   }
+  .padded {
+    padding: 5px;
+  }
   .nitems {
     padding-top: 20px;
     flex-direction: column;
@@ -422,17 +452,24 @@ section {
   }
   .wrapper-left {
     width: 100%;
+    align-self: center;
     align-items: center;
     text-align: center;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper .wrapper-left {
+    width: 50%;
+  }
+  .wrapper-right {
+    align-self: center;
   }
 }
 @media (max-width: 480px) {
   nav {
     font-size: 1rem;
     width: calc(100% - 10px);
-  }
-  .padded {
-    padding: 5px;
   }
   .button {
     padding: 5px;

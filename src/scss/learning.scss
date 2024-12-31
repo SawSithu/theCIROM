@@ -1,9 +1,15 @@
-@use "main.scss";
+@import "main.scss";
 
 h1 {
     font-size: clamp(3rem, 3vw, 5rem);
 }
-
+#cmotion {
+    background: $black;
+}
+#rmotion {
+    background: $black;
+}
+// ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 768px) {
     h1 {
         font-size: clamp(2rem, 3vw, 5rem);

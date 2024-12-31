@@ -72,21 +72,26 @@ $font-family_2: "mokoto", sans-serif;
 }
 html {
 	margin: 0;
-	padding-top: 5px;
 	color: $white;
 	display: flex;
 	flex-direction: column;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
 	gap: 10px;
 	font-family: $font-family_1;
+	scroll-snap-type: block mandatory;
+	// section:nth-child(1) {
+	// 	height: calc(100vh - 20px);
+	// 	background: $black;
+
+	// }
 }
 body {
 	margin: 0;
-	padding-top: 5px;
 	color: $white;
 	display: flex;
 	flex-direction: column;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
+	scroll-snap-type: block mandatory;
 	gap: 10px;
 	font-family: $font-family_1;
 }
@@ -212,6 +217,7 @@ button {
 	}
 }
 nav {
+	padding-top: 5px;
 	button {
 		&:hover {
 			transform: scale(1.115);
@@ -242,6 +248,15 @@ nav {
 	}
 	.left {
 		text-align: left;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		a{
+			text-align: left;
+			display: flex;
+			align-items: center;
+			justify-content: center;	
+		}
 	}
 	a {
 		color: $white;
@@ -303,11 +318,6 @@ a {
 	align-items: flex-start;
 	justify-content: center;
 	gap: 20px;
-	
-	iframe{
-		width: 100%;
-		height: 100%;
-	}
 }
 .wrapper-right {
 	display: flex;
@@ -338,8 +348,10 @@ a {
 
 }
 .wrapper {
+	gap:15px;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	justify-content: space-between;
 	.wrapper-left{
 		height: 100%;
@@ -348,14 +360,32 @@ a {
 		height: 100%;
 	}
 }
+.iframe-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	padding-top: 56.25%;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
 section {
-	height: calc(100vh - 20px);
+	scroll-snap-align: start;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
 @media (max-width: 768px) {
+	.wrapper {
+		gap: 20px;
+	}
 	nav {
 		span {
 			padding: 5px;
@@ -403,6 +433,9 @@ section {
 			}
 		}
 	}
+	.padded {
+		padding: 5px;
+	}
 	.nitems {
 		padding-top: 20px;
 		flex-direction: column;
@@ -417,17 +450,24 @@ section {
 	}
 	.wrapper-left {
 		width: 100%;
+		align-self: center;
 		align-items: center;
 		text-align: center;
+	}
+	.wrapper{
+		flex-direction: column;
+		.wrapper-left{
+			width: 50%;
+		}
+	}
+	.wrapper-right {
+		align-self: center;
 	}
 }
 @media (max-width: 480px) {
 	nav {
 		font-size: 1rem;
 		width: calc(100% - 10px);
-	}
-	.padded {
-		padding: 5px;
 	}
 	.button {
 		padding: 5px;
