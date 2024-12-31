@@ -41368,11 +41368,17 @@ var camera = new THREE.PerspectiveCamera(-45, window.innerWidth / window.innerHe
 var renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg')
 });
+var ambientlight = new THREE.AmbientLight(0xffffff);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(100);
 renderer.render(scene, camera);
-var ambientlight = new THREE.AmbientLight(0xffffff);
+document.body.addEventListener("resize", function () {
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.position.setZ(100);
+  renderer.render(scene, camera);
+});
 scene.add(ambientlight);
 function addStar() {
   var geometry = new THREE.SphereGeometry(0.1, 24, 24);
@@ -41431,7 +41437,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62637" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65042" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

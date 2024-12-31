@@ -33,6 +33,9 @@ const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
 });
 
+const ambientlight = new THREE.AmbientLight(0xffffff);
+
+
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(100);
@@ -40,9 +43,15 @@ camera.position.setZ(100);
 renderer.render(scene, camera);
 
 
+document.body.addEventListener("resize",()=>{
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.setZ(100);
+
+    renderer.render(scene, camera);
+});
 
 
-const ambientlight = new THREE.AmbientLight(0xffffff);
 
 scene.add(ambientlight);
 
