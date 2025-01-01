@@ -6,11 +6,18 @@ h1 {
 #cmotion {
     background: rgb(19, 1, 16);
 }
+#cmotion2 {
+    background: rgb(15, 1, 19);
+    
+}
 #rmotion {
     background: rgb(1, 13, 19);
 }
 #rmotion2 {
     background: rgb(19, 14, 1);
+}
+#summary {
+    background: $black;
 }
 // ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 768px) {
