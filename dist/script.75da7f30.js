@@ -41343,10 +41343,12 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var loader = document.querySelector(".loader-wrapper");
 window.addEventListener("load", function () {
   loader.classList.add("hidden");
+  document.body.classList.remove("no-scroll");
   loader.addEventListener("transitionend", function () {
     loader.remove();
   });
 });
+
 // ------------------------------ Nav bar ------------------------------    
 var bars = document.getElementById("bars");
 var nitems = document.getElementById("nitems");
@@ -41437,7 +41439,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50116" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51635" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

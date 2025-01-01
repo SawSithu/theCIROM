@@ -2,11 +2,15 @@
 const loader = document.querySelector(".loader-wrapper");
 window.addEventListener("load", () => {
     loader.classList.add("hidden");
+
+    document.body.classList.remove("no-scroll");
     
     loader.addEventListener("transitionend", () => {
         loader.remove();
     });
 });
+
+
 // ------------------------------ Nav bar ------------------------------    
 const bars = document.getElementById("bars");
 const nitems =document.getElementById("nitems");

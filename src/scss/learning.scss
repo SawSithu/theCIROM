@@ -18,6 +18,13 @@ h1 {
 }
 #summary {
     background: $black;
+    .wrapper-left{
+        justify-content: start;
+        div {
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 // ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 768px) {

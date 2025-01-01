@@ -103,8 +103,8 @@ a {
 ul {
 	display: block;
 	list-style-type: disc;
-	margin-top: 1em;
-	margin-bottom: 1 em;
+	margin-top: 1ch;
+	margin-bottom: 1ch;
 	margin-left: 0;
 	margin-right: 0;
 	padding-left: 40px;
@@ -145,6 +145,9 @@ ul {
 	border: $color 5px solid;
 	animation: spin 1s linear infinite;
 }
+.no-scroll {
+	overflow: hidden;
+ }
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -290,6 +293,11 @@ nav {
 .padded {
 	padding-left: 1in;
 	padding-right: 1in;
+}
+.bordered {
+	padding: 15px;
+	background: $black;
+	box-shadow: $color 0px 0px 0px 1px ;
 }
 .bold {
 	background: var($color);
