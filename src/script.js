@@ -43,13 +43,14 @@ camera.position.setZ(100);
 renderer.render(scene, camera);
 
 
-document.body.addEventListener("resize",()=>{
-    renderer.setPixelRatio(window.devicePixelRatio);
+function sceneResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(100);
+    camera.aspect = window.innerWidth / window.innerHeight;
 
-    renderer.render(scene, camera);
-});
+    camera.updateProjectionMatrix();
+}
+
+window.addEventListener('resize', sceneResize);
 
 
 
