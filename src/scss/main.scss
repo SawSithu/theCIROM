@@ -147,7 +147,7 @@ h1 {
 	padding: 0;
 	font-weight: 400;
 	font-style: normal;
-	font-size: clamp(3rem, 8vw, 5rem);
+	font-size: clamp(2rem, 8vw, 5rem);
 }
 h2 {
 	font-family: $font-family_2;
@@ -378,7 +378,7 @@ section {
 	justify-content: center;
 	text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.wrapper {
 		gap: 20px;
 	}
@@ -446,26 +446,47 @@ section {
 	}
 	.wrapper-left {
 		width: 100%;
-		align-self: center;
 		align-items: center;
+		justify-content: center;
 		text-align: center;
-	}
-	.wrapper{
-		flex-direction: column;
-		.wrapper-left{
-			width: 50%;
-		}
 	}
 	.wrapper-right {
 		align-self: center;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+	.wrapper {
+		flex-direction: column;
+		width: 100%;
+		align-self: center;
+		.wrapper-left {
+			width: 50%;
+			align-self: center;
+			align-items: center;
+			text-align: center;
+		}
+		wrapper-right {
+			align-self: center;
+		}
 	}
 }
 @media (max-width: 480px) {
 	nav {
 		font-size: 1rem;
-		width: calc(100% - 10px);
+		width: 100%;
 	}
 	.button {
 		padding: 5px;
 	}
+	.wrapper {
+		width: 100%;
+		.wrapper-left {
+			width: 100%;
+		}
+		.wrapper-right {
+			width: 100%;
+		}
+	}
+
 }
