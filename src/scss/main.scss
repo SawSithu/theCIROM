@@ -421,6 +421,14 @@ section {
 	justify-content: center;
 	text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
+.ee {
+	font-family: $font-family_1;
+	background: $black;
+	&:hover {
+		text-shadow: none;
+		color: $white;
+	}
+}
 @media (max-width: 1024px) {
 	.wrapper {
 		gap: 20px;

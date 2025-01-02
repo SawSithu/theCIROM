@@ -431,6 +431,15 @@ section {
   text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
 
+.ee {
+  font-family: "Audiowide", serif;
+  background: black;
+}
+.ee:hover {
+  text-shadow: none;
+  color: white;
+}
+
 @media (max-width: 1024px) {
   .wrapper {
     gap: 20px;

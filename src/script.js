@@ -57,7 +57,6 @@ function sceneResize() {
 window.addEventListener('resize', sceneResize);
 
 
-
 scene.add(ambientlight);
 
 
