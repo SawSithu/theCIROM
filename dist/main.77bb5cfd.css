@@ -544,6 +544,10 @@ section {
   .wrapper .wrapper-right {
     width: 100%;
   }
+  .img-wrapper {
+    width: 100%;
+    box-shadow: none;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
