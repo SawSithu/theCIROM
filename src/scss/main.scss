@@ -98,7 +98,12 @@ body {
 a {
 	font-family: $font-family_2;
 	text-decoration: none;
-	color: $white
+	color: $white;
+	&:hover {
+		cursor: pointer;
+		text-shadow: $color 0px 0px 20px;
+		color: rgb(167, 230, 255);
+	}
 }
 ul {
 	display: block;
@@ -348,7 +353,7 @@ a {
 	width: 50%;
 	height: 50%;
 	flex-direction: column;
-	align-items: center;
+	align-items: right;
 	justify-content: center;
 	text-align: right;
 	gap: 20px;
@@ -398,6 +403,16 @@ a {
 		width: 100%;
 	}
 }
+.img-wrapper {
+	position: relative;
+	width: clamp(299px,50vw, 599px);
+	height: clamp(209px, 50vw, 509px);
+	img {
+		max-width: 100%;
+  		height: auto;
+	}
+
+}
 section {
 	scroll-snap-align: start;
 	height: 100vh;
@@ -406,7 +421,7 @@ section {
 	justify-content: center;
 	text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 	.wrapper {
 		gap: 20px;
 	}

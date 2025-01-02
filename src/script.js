@@ -84,6 +84,7 @@ earth.rotation.z = Math.PI / 5;
 Array(200).fill().forEach(addStar);
 
 
+
 function animate() {
     requestAnimationFrame(animate);
     earth.rotation.y += 0.0055;
