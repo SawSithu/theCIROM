@@ -176,45 +176,32 @@ h1 {
 	font-style: normal;
 	font-size: clamp(2rem, 8vw, 5rem);
 }
-h2 {
+h2,h3,h4,h5,h6 {
 	font-family: $font-family_2;
 	font-size: inherit;
 	line-height: 1ch;
 	margin: 0;
 	padding: 0;
+}
+h2 {
+	font-size: clamp(1.5rem, 6vw, 3rem);
 }
 h3 {
-	font-family: $font-family_2;
-	font-size: inherit;
-	line-height: 1ch;
-	margin: 0;
-	padding: 0;
-}
+	font-size: clamp(1.2rem, 5vw, 2.5rem);
+}	
 h4 {
-	font-family: $font-family_2;
-	font-size: inherit;
-	line-height: 1ch;
-	margin: 0;
-	padding: 0;
+	font-size: clamp(1rem, 4vw, 2rem);
 }
 h5 {
-	font-family: $font-family_2;
-	font-size: inherit;
-	line-height: 1ch;
-	margin: 0;
-	padding: 0;
+	font-size: clamp(0.8rem, 3vw, 1.5rem);
 }
 h6 {
-	font-family: $font-family_2;
-	font-size: inherit;
-	line-height: 1ch;
-	margin: 0;
-	padding: 0;
+	font-size: clamp(0.6rem, 2vw, 1rem);
 }
 p {
 	margin: 0;
 	padding: 0;
-	font-size: clamp(11pt, 2vw, 1.5rem);
+	font-size: clamp(0.8rem, 3vw, 1.5rem);
 }
 canvas {
 	position: fixed;
@@ -413,6 +400,9 @@ a {
 	}
 
 }
+.quiz-wrapper {
+	width: 100%;
+}
 section {
 	scroll-snap-align: start;
 	height: 100vh;
@@ -421,7 +411,7 @@ section {
 	justify-content: center;
 	text-shadow: rgba(0, 0, 0, 0.296) 0px 5px 10px;
 }
-.ee {
+.easter-egg {
 	font-family: $font-family_1;
 	background: $black;
 	&:hover {
@@ -440,6 +430,7 @@ section {
 		.right {
 			display: flex;
 			flex-direction: column;
+			gap: 10px;
 			.bars {
 				display: flex;
 				position: relative;
@@ -447,8 +438,8 @@ section {
 				justify-content: space-around;
 				align-items: end;
 				align-self: flex-end;
-				width: 25px;
-				height: 25px;
+				width: 45px;
+				height: 45px;
 				padding: 0;
 				margin: 0;
 				background: none;

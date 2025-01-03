@@ -36,6 +36,14 @@ h1 {
 #equations {
     background: $black;
 }
+#quiz{
+    background: $black;
+    height: fit-content;
+    iframe {
+        width: 100%;
+        height: 3037px;
+    }
+}
 // ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 1024px) {
     h1 {
