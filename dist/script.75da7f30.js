@@ -41353,13 +41353,33 @@ window.addEventListener("load", function () {
 var bars = document.getElementById("bars");
 var nitems = document.getElementById("nitems");
 var main = document.getElementById("main");
+var nav = document.getElementById("nav");
 bars.addEventListener("click", function () {
   bars.classList.toggle("active");
+  nav.classList.toggle("show");
   nitems.classList.toggle("come");
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 1025) {
     main.classList.toggle("blur");
-  } else if (window.innerWidth > 800) {
-    main.classList.toggle("blur");
+  } else if (window.innerWidth > 1025) {
+    main.classList.remove("blur");
+  }
+});
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    nav.style.background = "#000000f1";
+  } else {
+    nav.style.background = "transparent";
+  }
+});
+
+// ------------------------------ Making the quizes responsive ------------------------------
+window.addEventListener('message', function (event) {
+  var iframe = document.getElementById('quiz-iframe');
+  if (event.origin === 'https://docs.google.com') {
+    var data = JSON.parse(event.data);
+    if (data && data.type === 'resize') {
+      iframe.style.height = data.height + 'px';
+    }
   }
 });
 
@@ -41439,7 +41459,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59832" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62793" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

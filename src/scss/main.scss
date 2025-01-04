@@ -232,7 +232,9 @@ button {
 	}
 }
 nav {
+	background: transparent;
 	padding-top: 5px;
+	transition: ease-in-out 50ms;
 	button {
 		&:hover {
 			transform: scale(1.115);
@@ -282,6 +284,11 @@ nav {
 		width: clamp(50px, 3vw, 100px);
 	}
 }
+.nitems {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+}
 .padded {
 	padding-left: 1in;
 	padding-right: 1in;
@@ -300,10 +307,6 @@ nav {
 	a {
 		color: $white;
 	}
-}
-.nitems {
-	display: flex;
-	gap: 50px;
 }
 a {
 	font-size: clamp(1.2rem, 50%, 1.5rem);
@@ -400,9 +403,6 @@ a {
 	}
 
 }
-.quiz-wrapper {
-	width: 100%;
-}
 section {
 	scroll-snap-align: start;
 	height: 100vh;
@@ -424,13 +424,19 @@ section {
 		gap: 20px;
 	}
 	nav {
+		overflow: hidden;
 		span {
 			padding: 5px;
 		}
+		&.show {
+			height: 100vh;
+		}
 		.right {
+			right: 10px;
+			position: absolute;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			.bars {
 				display: flex;
 				position: relative;
@@ -475,17 +481,15 @@ section {
 		padding: 5px;
 	}
 	.nitems {
+		display: flex;
 		padding-top: 20px;
+		gap: 25px;
 		flex-direction: column;
-		transform: translate(200px);
-		transition: linear 150ms;
+		overflow: hidden;
+		transition-origin: top;
+		transition: ease-in-out 1000ms;
 	}
-	.come {
-		transform: translate(0);
-	}
-	.active {
-		background: red;
-	}
+	
 	.wrapper-left {
 		width: 100%;
 		align-items: center;

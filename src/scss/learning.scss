@@ -38,11 +38,19 @@ h1 {
 }
 #quiz{
     background: $black;
-    height: fit-content;
-    iframe {
+    height: auto;
+    padding-top: 150px;
+    .quiz-wrapper {
+        position: relative;
         width: 100%;
-        height: 3037px;
+        overflow: hidden;
+        iframe {
+            width: 100%;
+            height: 1755px;
+            border: 0;
+        }
     }
+
 }
 // ------------------Media Queries For Resopnsiveness------------------
 @media (max-width: 1024px) {

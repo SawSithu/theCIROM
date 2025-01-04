@@ -14,14 +14,37 @@ window.addEventListener("load", () => {
 // ------------------------------ Nav bar ------------------------------    
 const bars = document.getElementById("bars");
 const nitems =document.getElementById("nitems");
-const main = document.getElementById("main");   
+const main = document.getElementById("main");
+const nav = document.getElementById("nav");
+
 bars.addEventListener("click", () => {
     bars.classList.toggle("active");
+    nav.classList.toggle("show");
     nitems.classList.toggle("come");
-    if(window.innerWidth < 800) {
+    if(window.innerWidth < 1025) {
         main.classList.toggle("blur");
-    }else if(window.innerWidth > 800) {
-        main.classList.toggle("blur");
+    }else if(window.innerWidth > 1025) {
+        main.classList.remove("blur");
+    }
+});
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 0) {
+        nav.style.background = "#000000f1";
+    }else {
+        nav.style.background = "transparent";
+    }
+});
+
+// ------------------------------ Making the quizes responsive ------------------------------
+window.addEventListener('message', function(event) {
+    var iframe = document.getElementById('quiz-iframe');
+    if (event.origin === 'https://docs.google.com') {
+        var data = JSON.parse(event.data);
+        if (data && data.type === 'resize') {
+            iframe.style.height = data.height + 'px';
+        }
     }
 });
 

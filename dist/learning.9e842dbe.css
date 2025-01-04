@@ -234,7 +234,9 @@ button a {
 }
 
 nav {
+  background: transparent;
   padding-top: 5px;
+  transition: ease-in-out 50ms;
   z-index: 99;
   position: fixed;
   width: 100%;
@@ -282,6 +284,12 @@ nav img {
   width: clamp(50px, 3vw, 100px);
 }
 
+.nitems {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
 .padded {
   padding-left: 1in;
   padding-right: 1in;
@@ -302,11 +310,6 @@ nav img {
 }
 .bold a {
   color: white;
-}
-
-.nitems {
-  display: flex;
-  gap: 50px;
 }
 
 a {
@@ -410,10 +413,6 @@ a {
   height: auto;
 }
 
-.quiz-wrapper {
-  width: 100%;
-}
-
 section {
   scroll-snap-align: start;
   height: 100vh;
@@ -436,13 +435,21 @@ section {
   .wrapper {
     gap: 20px;
   }
+  nav {
+    overflow: hidden;
+  }
   nav span {
     padding: 5px;
   }
+  nav.show {
+    height: 100vh;
+  }
   nav .right {
+    right: 10px;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
   nav .right .bars {
     display: flex;
@@ -482,16 +489,13 @@ section {
     padding: 5px;
   }
   .nitems {
+    display: flex;
     padding-top: 20px;
+    gap: 25px;
     flex-direction: column;
-    transform: translate(200px);
-    transition: linear 150ms;
-  }
-  .come {
-    transform: translate(0);
-  }
-  .active {
-    background: red;
+    overflow: hidden;
+    transition-origin: top;
+    transition: ease-in-out 1000ms;
   }
   .wrapper-left {
     width: 100%;
@@ -585,11 +589,18 @@ h1 {
 
 #quiz {
   background: black;
-  height: fit-content;
+  height: auto;
+  padding-top: 150px;
 }
-#quiz iframe {
+#quiz .quiz-wrapper {
+  position: relative;
   width: 100%;
-  height: 3037px;
+  overflow: hidden;
+}
+#quiz .quiz-wrapper iframe {
+  width: 100%;
+  height: 1755px;
+  border: 0;
 }
 
 @media (max-width: 1024px) {
